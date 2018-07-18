@@ -3,14 +3,8 @@ const {assert} = suitest;
 
 describe('My super cool test', () => {
 	before(async() => {
-		try {
-			// Start test
-			await suitest.startTest('my-super-cool-test');
-		} catch (e) {
-			console.error(e);
-			// Mocha wouldn't stop if just throw an error here
-			process.exit(1);
-		}
+		// Start test
+		await suitest.startTest('my-super-cool-test');
 	});
 
 	it('should pass', async() => {
