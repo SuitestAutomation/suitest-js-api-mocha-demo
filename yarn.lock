@@ -1620,10 +1620,10 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-suitest-js-api@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/suitest-js-api/-/suitest-js-api-1.6.0.tgz#e6acdabcae2f157336fd9597bbb5a76813cf770c"
-  integrity sha512-90tOcDUQXk+6KBsvOSvJHnA4N/myvR3GN2DqqiccPaphBOMN34eX1Cjb5+yEns90hIob98A9FIz4QxNkQ10PNg==
+suitest-js-api@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/suitest-js-api/-/suitest-js-api-1.6.1.tgz#2b3e18157620b9972037c191ba039e972557c4e3"
+  integrity sha512-kBaOxkdNEofMA89rZC0XmQ+h2q4TXfIV/W+wY1LCU6B8zMgJ3jyL1j7ZWcsmPImKa9Ih/tg1+yDeVRsdgnn8kA==
   dependencies:
     ajv "^6.1.1"
     ansi-regex "^3.0.0"
