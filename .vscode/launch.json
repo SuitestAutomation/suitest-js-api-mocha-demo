@@ -7,7 +7,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Debug e2e tests",
+            "name": "Debug e2e tests (via npm)",
             "cwd": "${workspaceFolder}",
             "runtimeExecutable": "npm",
             "runtimeArgs": [
@@ -15,6 +15,23 @@
             ],
             "port": 9121,
             "autoAttachChildProcesses": true
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug e2e tests (via node)",
+            "program": "${workspaceFolder}/node_modules/suitest-js-api/lib/testLauncher/index.js",
+            "args": [
+                 "interactive",
+                 "--inspect-brk=9121",
+                 "node",
+                 "./node_modules/mocha/bin/_mocha",
+                 "--no-timeouts",
+                 "--exit"
+            ],
+            "cwd": "${workspaceFolder}",
+            "autoAttachChildProcesses": true,
+            "console": "integratedTerminal"
         }
     ]
 }
