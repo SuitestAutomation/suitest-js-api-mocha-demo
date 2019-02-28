@@ -4,11 +4,12 @@
   "description": "Demo set up for Suitest JS API",
   "dependencies": {
     "mocha": "^5.2.0",
-    "suitest-js-api": "^1.4.3"
+    "suitest-js-api": "^1.7.3"
   },
   "scripts": {
-    "interactive": "suitest interactive mocha --no-timeouts --exit",
-    "debug": "suitest interactive --inspect-brk=9121 ./node_modules/mocha/bin/_mocha --no-timeouts --exit",
-    "automated": "suitest automated mocha --no-timeouts --exit"
+    "interactive": "suitest interactive mocha ./test/dummy.test.js --no-timeouts --exit",
+    "debug": "suitest interactive --inspect-brk=9121 node ./node_modules/mocha/bin/_mocha ./test/debug.test.js --no-timeouts --exit",
+    "automated": "suitest automated mocha ./test/dummy.test.js --no-timeouts --exit",
+    "repl": "suitest interactive node --experimental-repl-await ./node_modules/mocha/bin/_mocha ./test/interactive.test.js --no-timeouts --exit"
   }
 }
