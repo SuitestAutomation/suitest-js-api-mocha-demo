@@ -18,10 +18,9 @@ describe('My super cool test', () => {
 		await assert.cookie('name').doesNot().exist();
 
 		// test element
-		await assert.element({
-			css: 'div',
-			index: 1,
-		}).exist();
+		// https://suite.st/docs/suitest-api/assertions-test-subjects/#element
+		await assert.element('maincontainer').exist();
+		await assert.video().doesNot().exist();
 	});
 
 	after(async() => {

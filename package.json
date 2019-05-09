@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "Demo set up for Suitest JS API",
   "dependencies": {
-    "mocha": "^5.2.0",
-    "suitest-js-api": "^1.4.3"
+    "mocha": "^6.1.4",
+    "suitest-js-api": "^1.8.2"
   },
   "scripts": {
-    "interactive": "suitest interactive mocha --no-timeouts --exit",
+    "interactive": "suitest interactive mocha --no-timeouts --exit \"./test/dummy.test.js\"",
+    "interactive:logs": "suitest interactive --log-dir=e2e mocha --no-timeouts --exit \"./test/dummy.test.js\"",
+    "repl-example": "suitest interactive mocha --no-timeouts --exit \"./test/repl.test.js\"",
     "debug": "suitest interactive --inspect-brk=9121 ./node_modules/mocha/bin/_mocha --no-timeouts --exit",
-    "automated": "suitest automated mocha --no-timeouts --exit"
+    "automated": "suitest automated mocha --no-timeouts --exit \"./test/dummy.test.js\"",
+    "automated:logs": "suitest automated --log-dir=e2e mocha --no-timeouts --exit"
   }
 }
