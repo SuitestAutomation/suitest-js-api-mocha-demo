@@ -11,16 +11,18 @@ describe('My super cool test', () => {
 		// Open app
 		await assert.openApp();
 
-		// assert location
+		// Assert location
 		await assert.location().doesNot().startWith('test');
 
-		// assert cookie
+		// Assert cookie
 		await assert.cookie('name').doesNot().exist();
 
-		// test element
+		// Test if element exist
 		// https://suite.st/docs/suitest-api/assertions-test-subjects/#element
-		await assert.element('maincontainer').exist();
-		await assert.video().doesNot().exist();
+		await assert.element({
+			css: 'div',
+			index: 1,
+		}).exist();
 	});
 
 	after(async() => {

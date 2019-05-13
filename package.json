@@ -9,9 +9,9 @@
   "scripts": {
     "interactive": "suitest interactive mocha --no-timeouts --exit \"./test/dummy.test.js\"",
     "interactive:logs": "suitest interactive --log-dir=e2e mocha --no-timeouts --exit \"./test/dummy.test.js\"",
-    "repl-example": "suitest interactive mocha --no-timeouts --exit \"./test/repl.test.js\"",
-    "debug": "suitest interactive --inspect-brk=9121 ./node_modules/mocha/bin/_mocha --no-timeouts --exit",
     "automated": "suitest automated mocha --no-timeouts --exit \"./test/dummy.test.js\"",
-    "automated:logs": "suitest automated --log-dir=e2e mocha --no-timeouts --exit"
+    "automated:logs": "suitest automated --log-dir=e2e mocha --no-timeouts --exit \"./test/dummy.test.js\"",
+    "interactive:debug": "suitest interactive --inspect-brk=9121 node ./node_modules/mocha/bin/_mocha --no-timeouts --exit \"./test/debug.test.js\"",
+    "interactive:repl": "suitest interactive mocha --no-timeouts --exit \"./test/repl.test.js\""
   }
 }
