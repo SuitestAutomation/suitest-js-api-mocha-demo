@@ -7,11 +7,11 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Debug e2e tests",
+            "name": "Run debug test",
             "cwd": "${workspaceFolder}",
             "runtimeExecutable": "npm",
             "runtimeArgs": [
-                "run-script", "debug"
+                "run-script", "interactive:debug"
             ],
             "port": 9121,
             "autoAttachChildProcesses": true
