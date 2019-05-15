@@ -1,5 +1,6 @@
 const {snippetHomepageOpened} = require('./common');
-const {imageCandiesInGallery} = require('./selectors');
+const {imageCandiesFocused, imageCandiesInGallery} = require('./elements');
+const {snapshotElement} = require('./utils');
 
 const suitest = require('suitest-js-api');
 const {assert, VRC, PROP} = suitest;
@@ -42,31 +43,14 @@ describe('Welcome to suitest', async() => {
 		 * in an " Element repository" or you can pass selector to element chain.
 		 *
 		 */
-		await assert.element('image (candies) focused').matches([
-			PROP.BG_COLOR,
-			PROP.BORDER_COLOR,
-			PROP.BORDER_STYLE,
-			PROP.CLASS,
-			PROP.HREF,
-			PROP.ID,
-			PROP.IMAGE,
-			PROP.LEFT,
-			PROP.OPACITY,
-			PROP.TEXT_COLOR,
-			PROP.TEXT_CONTENT,
-			PROP.TOP,
-			PROP.Z_INDEX,
-		]).timeout(2000);
+		await snapshotElement(imageCandiesFocused).timeout(2000);
 		/**
 		 * The previous line has made sure that the focus is on the first item in our list.
 		 * Pressing OK on that item should open the image gallery, let's try that this really works.
 		 * We will reuse the knowledge from the previous step.
 		 */
 		await assert.press(VRC.ENTER);
-		await assert.element(imageCandiesInGallery).matches({
-			[PROP.BG_COLOR]: 'rgba(0, 0, 0, 0)',
-			[PROP.IMAGE]: './api/image/6210d214-89b9-4ea6-8150-815760d695b5-093FD491'
-		}).timeout(2000);
+		await snapshotElement(imageCandiesInGallery).timeout(2000);
 		/**
 		 * This is enough for one test, be sure to check the other test examples. It is always a good idea to keep your test cases
 		 * as simple as possible. Ideally any test scenario should not be longer than 30 test lines (50 is an extreme case).

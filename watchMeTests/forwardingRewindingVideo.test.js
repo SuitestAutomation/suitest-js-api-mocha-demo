@@ -1,4 +1,8 @@
-const {snippetHomepageOpened, snippetOpenVideo} = require('./common');
+const {
+	snippetHomepageOpened,
+	snippetOpenVideo} = require('./common');
+const {forwardBtnFocused, pausedBtnFocused, rewindBtnFocused} = require('./elements');
+const {snapshotElement} = require('./utils');
 
 const suitest = require('suitest-js-api');
 const {assert, VRC, PROP, COMP, VALUE, VIDEO_STATE} = suitest;
@@ -37,20 +41,9 @@ describe('Forwarding/Rewinding video', async() => {
 		 * Focus the "Forward" button on the control panel.
 		 */
 		await assert.press(VRC.DOWN);
-		await assert.element('\'pause\' button focused').matches([
-			PROP.CLASS,
-			PROP.HEIGHT,
-			PROP.IMAGE,
-			PROP.TEXT_COLOR,
-			PROP.TOP,
-		]).timeout(2000);
+		await snapshotElement(pausedBtnFocused).timeout(2000);
 		await assert.press(VRC.RIGHT);
-		await assert.element('\'forward\' button focused').matches([
-			PROP.CLASS,
-			PROP.HEIGHT,
-			PROP.IMAGE,
-			PROP.TOP,
-		]).timeout(2000);
+		await snapshotElement(forwardBtnFocused).timeout(2000);
 		/**
 		 * Forward the video.
 		 */
@@ -79,12 +72,7 @@ describe('Forwarding/Rewinding video', async() => {
 		 * Focus the Rewind button and rewind video.
 		 */
 		await assert.press(VRC.LEFT).until(
-			suitest.element('\'rewind\' button focused').matches([
-				PROP.CLASS,
-				PROP.HEIGHT,
-				PROP.IMAGE,
-				PROP.TOP,
-			])
+			suitest.element(rewindBtnFocused.selector).matches(rewindBtnFocused.props)
 		).repeat(6);
 		await suitest.press(VRC.ENTER).repeat(6).interval(2000);
 		await assert.video().matches([
