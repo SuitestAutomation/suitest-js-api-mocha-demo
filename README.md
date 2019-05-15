@@ -12,3 +12,13 @@ This repository holds a minimal set-up, required to launch [Suitest JS API](http
  `yarn automated` or `npm run automated` for automated.
 5. In order to debug your test, run `yarn debug` or `npm run debug` and connect debugger to `localhost:9121`.
  More info on debugging can be found in [our docs](https://suite.st/docs/suitest-api/debugging/).
+ 
+ ## Example tests
+ 
+ In `watchMeTests` folder you can find some suitest tests written for
+ WatchMe app (every suitest account has this app by default). Those tests
+ rely on some elements from suitest "Element repository" and configuration
+ where base url set to `http://file.suite.st/sampleapp/index-hbbtv.html` - hbbtv
+ configuration in WatchMe app. So make sure you properly adjusted `.suitestrc` file
+and then you can launch them with `npm run interactive:watchMe` or 
+`npm run automated:watchMe`.
