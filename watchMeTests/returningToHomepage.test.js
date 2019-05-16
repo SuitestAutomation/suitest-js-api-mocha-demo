@@ -6,6 +6,7 @@ const {player, imageCandiesFocused, folderPathImages, imageInFolderChariesFocuse
 
 describe('Returning to Homepage', async() => {
 	before(async() => {
+		await assert.openApp();
 		await snippetHomepageOpened();
 	});
 

@@ -6,6 +6,7 @@ const {imageCandiesFocused, gallery, imageCandiesInGalleryRepo} = require('./ele
 
 describe('Opening Image in Gallery', async() => {
 	before(async() => {
+		await assert.openApp();
 		await snippetHomepageOpened();
 	});
 

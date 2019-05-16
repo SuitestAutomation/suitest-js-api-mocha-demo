@@ -9,6 +9,7 @@ const {assert, VRC, PROP, COMP, VALUE, VIDEO_STATE} = suitest;
 
 describe('Forwarding/Rewinding video', async() => {
 	before(async() => {
+		await assert.openApp();
 		await snippetHomepageOpened();
 		/**
 		 * Navigate to the video and open it using the snippet test.

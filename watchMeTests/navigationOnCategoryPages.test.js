@@ -7,6 +7,7 @@ const {snapshotElement} = require('./utils');
 
 describe('Navigation on Category Pages', async() => {
 	before(async() => {
+		await assert.openApp();
 		await snippetHomepageOpened();
 	});
 

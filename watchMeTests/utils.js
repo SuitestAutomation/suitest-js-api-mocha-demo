@@ -33,7 +33,6 @@ const snapshotElement = el => {
 			}))
 			.reduce((acc, el) => acc.concat(el), []);
 
-	debugger;
 	return assertElement(el)
 		.matches(matcher);
 };
