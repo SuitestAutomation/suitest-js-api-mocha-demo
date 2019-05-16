@@ -7,8 +7,9 @@ const {snapshotElement} = require('./utils');
 const suitest = require('suitest-js-api');
 const {assert, VRC, PROP, COMP, VALUE, VIDEO_STATE} = suitest;
 
-describe('Forwarding/Rewinding video', async() => {
+describe('Video player', async() => {
 	before(async() => {
+		await suitest.startTest('WatchMe test', {name: 'Video player'});
 		await assert.openApp();
 		await snippetHomepageOpened();
 		/**
@@ -17,7 +18,7 @@ describe('Forwarding/Rewinding video', async() => {
 		await snippetOpenVideo();
 	});
 
-	it('forwarding rewinding video', async() => {
+	it('Should be possible to forward&rewind video', async() => {
 		await assert.video().matches([
 			{
 				name: PROP.VIDEO_LENGTH,
@@ -42,9 +43,9 @@ describe('Forwarding/Rewinding video', async() => {
 		 * Focus the "Forward" button on the control panel.
 		 */
 		await assert.press(VRC.DOWN);
-		await snapshotElement(pausedBtnFocused).timeout(2000);
+		await snapshotElement(pausedBtnFocused);
 		await assert.press(VRC.RIGHT);
-		await snapshotElement(forwardBtnFocused).timeout(2000);
+		await snapshotElement(forwardBtnFocused);
 		/**
 		 * Forward the video.
 		 */
@@ -95,7 +96,7 @@ describe('Forwarding/Rewinding video', async() => {
 				name: PROP.VIDEO_URL,
 				val: 'http://file.suite.st/sampleapp/api/video/a84d67e5-c6d4-41c0-9f70-cd8c7a5f6f4f.mp4',
 			},
-		]).timeout(2000);
+		]);
 	});
 });
 

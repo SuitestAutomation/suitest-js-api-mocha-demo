@@ -229,4 +229,37 @@ module.exports = {
 			[PROP.WIDTH]: 1280
 		}
 	},
+	imagesFolder: {
+		selector: {css: 'div#directory-structure_WidgetStrip>div:nth-child(2)>div:nth-child(1)'},
+		props: [
+			{
+				name: PROP.BORDER_COLOR,
+				val: 'rgba(20, 23, 176, 1)',
+			},
+			{
+				name: PROP.BORDER_STYLE,
+				val: 'solid',
+			},
+			{
+				name: PROP.CLASS,
+				val: 'widget container button item folder folder-main listitem active focus buttonFocussed',
+			},
+			{
+				name: PROP.LEFT,
+				val: 31,
+			},
+			{
+				name: PROP.TEXT_COLOR,
+				val: 'rgba(255, 255, 255, 1)',
+			},
+			{
+				name: PROP.TEXT_CONTENT,
+				val: '7 Images',
+			},
+			{
+				name: PROP.TOP,
+				val: 315,
+			},
+		]
+	}
 };

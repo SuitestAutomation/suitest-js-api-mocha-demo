@@ -5,8 +5,9 @@ const {snapshotElement} = require('./utils');
 const suitest = require('suitest-js-api');
 const {assert, VRC, PROP} = suitest;
 
-describe('Welcome to suitest', async() => {
+describe('Basic functionality', async() => {
 	before(async() => {
+		await suitest.startTest('WatchMe test', {name: 'Basic'});
 		/**
 		 * WatchMe is an HbbTV application that has been adapted to work in Chrome and Firefox.
 		 * The following line opens the WatchMe application on the connected device.
@@ -22,7 +23,7 @@ describe('Welcome to suitest', async() => {
 		await snippetHomepageOpened();
 	});
 
-	it('This is a sample test case on a sample app called WatchMe', async() => {
+	it('Should work correctly', async() => {
 		/**
 		 * Now that the application is ready to receive user input, send a key to it.
 		 * Below is the simplest version of the "Press" line that sends a navigational key press to the WatchMe app.
@@ -43,14 +44,14 @@ describe('Welcome to suitest', async() => {
 		 * in an " Element repository" or you can pass selector to element chain.
 		 *
 		 */
-		await snapshotElement(imageCandiesFocused).timeout(2000);
+		await snapshotElement(imageCandiesFocused);
 		/**
 		 * The previous line has made sure that the focus is on the first item in our list.
 		 * Pressing OK on that item should open the image gallery, let's try that this really works.
 		 * We will reuse the knowledge from the previous step.
 		 */
 		await assert.press(VRC.ENTER);
-		await snapshotElement(imageCandiesInGallery).timeout(2000);
+		await snapshotElement(imageCandiesInGallery);
 		/**
 		 * This is enough for one test, be sure to check the other test examples. It is always a good idea to keep your test cases
 		 * as simple as possible. Ideally any test scenario should not be longer than 30 test lines (50 is an extreme case).
