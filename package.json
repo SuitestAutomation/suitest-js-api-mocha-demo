@@ -13,7 +13,7 @@
     "interactive:repl": "suitest interactive mocha --no-timeouts --exit \"./test/repl.test.js\"",
     "automated": "suitest automated mocha --no-timeouts --exit \"./test/dummy.test.js\"",
     "automated:logs": "suitest automated --log-dir=e2e mocha --no-timeouts --exit \"./test/dummy.test.js\"",
-    "interactive:watchMe": "suitest interactive mocha --no-timeouts --exit ./watchMeTests/*.test.js",
-    "automated:watchMe": "suitest automated mocha --no-timeouts --exit ./watchMeTests/*.test.js"
+    "interactive:watchMe": "suitest interactive mocha --no-timeouts --exit \"./watchMeTests/*.test.js\"",
+    "automated:watchMe": "suitest automated mocha --no-timeouts --exit \"./watchMeTests/*.test.js\""
   }
 }
