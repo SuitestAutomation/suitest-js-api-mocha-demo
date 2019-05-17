@@ -1,17 +1,18 @@
 const suitest = require('suitest-js-api');
-const {assert, VRC, PROP, COMP, VALUE} = suitest;
+const {assert, VRC} = suitest;
 const {snippetHomepageOpened} = require('./common');
 const {snapshotElement} = require('./utils');
 const {player, imageCandiesFocused, folderPathImages, imageInFolderChariesFocused, imagesFolder} = require('./elements');
 
 describe('Back navigation', async() => {
+
 	before(async() => {
-		await suitest.startTest('WatchMe test', {name: 'Back button'});
+		await suitest.startTest('Back navigation');
 		await assert.openApp();
 		await snippetHomepageOpened();
 	});
 
-	it('Should navigate to "Homepage" after "Back" button press', async() => {
+	it('should navigate to "Homepage" after "Back" button press', async() => {
 		/**
 		 * Navigate to the first image and open it in the "Image Gallery".
 		 */
@@ -27,8 +28,7 @@ describe('Back navigation', async() => {
 		/**
 		 * Navigate to the "Image Folder".
 		 */
-		await assert.press([VRC.LEFT,VRC.DOWN]);
-
+		await assert.press([VRC.LEFT, VRC.DOWN]);
 		/**
 		 * Open the "Image Folder" and check that the image is focused.
 		 */
@@ -40,5 +40,6 @@ describe('Back navigation', async() => {
 		 */
 		await assert.press(VRC.BACK);
 		await snapshotElement(imagesFolder)
-	})
+	});
+
 });

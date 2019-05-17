@@ -1,18 +1,18 @@
 const {snippetHomepageOpened} = require('./common');
 const suitest = require('suitest-js-api');
-const {assert, VRC, PROP, COMP, VALUE} = suitest;
+const {assert, VRC} = suitest;
 const {pictureBtnFocused, watchmeBtnFocused, pageContent} = require('./elements');
 const {snapshotElement} = require('./utils');
 
-
 describe('Navigation on Category Pages', async() => {
+
 	before(async() => {
-		await suitest.startTest('WatchMe test', {name: 'Navigation'});
+		await suitest.startTest('Navigation on Category Pages');
 		await assert.openApp();
 		await snippetHomepageOpened();
 	});
 
-	it('Should work as expected', async() => {
+	it('should work as expected', async() => {
 		/**
 		 *  Navigation through the categories in the menu bar functions correctly
 		 *  and category pages have the right content
@@ -32,4 +32,5 @@ describe('Navigation on Category Pages', async() => {
 		await suitest.press([VRC.UP, VRC.RIGHT, VRC.ENTER]);
 		await snapshotElement(pageContent);
 	});
+
 });

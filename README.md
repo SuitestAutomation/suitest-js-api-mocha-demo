@@ -4,21 +4,23 @@ This repository holds a minimal set-up, required to launch [Suitest JS API](http
 
 ## Demo set up for Suitest JS API with Mocha test runner
 
+Demo set-up is targeting `test/` folder in this repo. Dummy test example would run on any HTML-based app,
+so you can use your own app for testing.
+
 1. Copy `.suitestrc.dist` file as `.suitestrc` and fill in it's contents 
  with your values according to [documentation](https://suite.st/docs/suitest-api/setup/#environment-setup).
-2. Write your tests in `test/` folder. There is an example in `test/dummy.test.js`.
-3. In terminal run `yarn` or `npm i`.
-4. Run `yarn interactive` or `npm run interactive` for interactive mode or
+2. In terminal run `yarn` or `npm i`.
+3. Run `yarn interactive` or `npm run interactive` for interactive mode or
  `yarn automated` or `npm run automated` for automated.
-5. In order to debug your test, run `yarn debug` or `npm run debug` and connect debugger to `localhost:9121`.
+4. In order to debug your test, run `yarn debug` or `npm run debug` and connect debugger to `localhost:9121`.
  More info on debugging can be found in [our docs](https://suite.st/docs/suitest-api/debugging/).
  
  ## Example tests
  
- In `watchMeTests` folder you can find some suitest tests written for
- WatchMe app (every suitest account has this app by default). Those tests
- rely on some elements from suitest "Element repository" and configuration
- where base url set to `http://file.suite.st/sampleapp/index-hbbtv.html` - hbbtv
+ In `watchMeTests` folder you can find some Suitest tests written for
+ WatchMe app (every Suitest account has this app by default). Those tests
+ rely on some elements from Suitest "Element repository" and configuration
+ where base url set to `http://file.suite.st/sampleapp/index-hbbtv.html` - HbbTv
  configuration in WatchMe app. So make sure you properly adjusted `.suitestrc` file
 and then you can launch them with `npm run interactive:watchMe` or 
 `npm run automated:watchMe`.

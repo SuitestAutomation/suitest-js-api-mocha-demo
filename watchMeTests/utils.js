@@ -5,14 +5,13 @@ const suitest = require('suitest-js-api');
  * @param {{selector: Object|string, props: Object}} el - element definition
  * @returns {ElementChain}
  */
-
 const element = el =>
 	suitest.element(el.selector);
 
 /**
  * Convert element definition to Suitest Element Assert Chain
- * @param el - element definition
- * @returns {T}
+ * @param {{selector: Object|string, props: Object}} el - element definition
+ * @returns {ElementChain}
  */
 const assertElement = el => element(el).toAssert();
 

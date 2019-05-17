@@ -1,15 +1,13 @@
-const {
-	snippetHomepageOpened,
-	snippetOpenVideo} = require('./common');
+const {snippetHomepageOpened, snippetOpenVideo} = require('./common');
 const {forwardBtnFocused, pausedBtnFocused, rewindBtnFocused} = require('./elements');
 const {snapshotElement} = require('./utils');
-
 const suitest = require('suitest-js-api');
-const {assert, VRC, PROP, COMP, VALUE, VIDEO_STATE} = suitest;
+const {assert, VRC, PROP, COMP, VIDEO_STATE} = suitest;
 
 describe('Video player', async() => {
+
 	before(async() => {
-		await suitest.startTest('WatchMe test', {name: 'Video player'});
+		await suitest.startTest('Video player');
 		await assert.openApp();
 		await snippetHomepageOpened();
 		/**
@@ -18,7 +16,7 @@ describe('Video player', async() => {
 		await snippetOpenVideo();
 	});
 
-	it('Should be possible to forward&rewind video', async() => {
+	it('should be able to forward and rewind video', async() => {
 		await assert.video().matches([
 			{
 				name: PROP.VIDEO_LENGTH,
@@ -98,5 +96,6 @@ describe('Video player', async() => {
 			},
 		]);
 	});
+
 });
 

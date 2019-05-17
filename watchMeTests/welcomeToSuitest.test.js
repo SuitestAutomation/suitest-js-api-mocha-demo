@@ -1,13 +1,13 @@
 const {snippetHomepageOpened} = require('./common');
 const {imageCandiesFocused, imageCandiesInGallery} = require('./elements');
 const {snapshotElement} = require('./utils');
-
 const suitest = require('suitest-js-api');
-const {assert, VRC, PROP} = suitest;
+const {assert, VRC} = suitest;
 
 describe('Basic functionality', async() => {
+
 	before(async() => {
-		await suitest.startTest('WatchMe test', {name: 'Basic'});
+		await suitest.startTest('Basic functionality');
 		/**
 		 * WatchMe is an HbbTV application that has been adapted to work in Chrome and Firefox.
 		 * The following line opens the WatchMe application on the connected device.
@@ -23,7 +23,7 @@ describe('Basic functionality', async() => {
 		await snippetHomepageOpened();
 	});
 
-	it('Should work correctly', async() => {
+	it('should work correctly', async() => {
 		/**
 		 * Now that the application is ready to receive user input, send a key to it.
 		 * Below is the simplest version of the "Press" line that sends a navigational key press to the WatchMe app.
