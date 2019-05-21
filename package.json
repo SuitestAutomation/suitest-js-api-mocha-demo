@@ -12,6 +12,8 @@
     "interactive:debug": "suitest interactive --inspect-brk=9121 node ./node_modules/mocha/bin/_mocha --no-timeouts --exit \"./test/debug.test.js\"",
     "interactive:repl": "suitest interactive mocha --no-timeouts --exit \"./test/repl.test.js\"",
     "automated": "suitest automated mocha --no-timeouts --exit \"./test/dummy.test.js\"",
-    "automated:logs": "suitest automated --log-dir=e2e mocha --no-timeouts --exit \"./test/dummy.test.js\""
+    "automated:logs": "suitest automated --log-dir=e2e mocha --no-timeouts --exit \"./test/dummy.test.js\"",
+    "interactive:watchMe": "suitest interactive mocha --no-timeouts --exit \"./watchMeTests/*.test.js\"",
+    "automated:watchMe": "suitest automated mocha --no-timeouts --exit \"./watchMeTests/*.test.js\""
   }
 }
