@@ -1,0 +1,317 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 4,
+    "passes": 2,
+    "pending": 0,
+    "failures": 2,
+    "start": "2019-05-30T11:26:19.896Z",
+    "end": "2019-05-30T11:27:55.778Z",
+    "duration": 95882,
+    "testsRegistered": 5,
+    "passPercent": 40,
+    "pendingPercent": 0,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 1,
+    "hasSkipped": true,
+    "passPercentClass": "danger",
+    "pendingPercentClass": "danger"
+  },
+  "suites": {
+    "uuid": "2fd742c7-3f46-4367-ad77-093d31568ac8",
+    "title": "",
+    "fullFile": "",
+    "file": "",
+    "beforeHooks": [],
+    "afterHooks": [],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "11c807a4-cfe1-4f8f-ac3d-1462f19c6c38",
+        "title": "Video player",
+        "fullFile": "/Users/antonbilan/projects/suitest-js-api-mocha-demo/watchMeTests/forwardingRewindingVideo.test.js",
+        "file": "/watchMeTests/forwardingRewindingVideo.test.js",
+        "beforeHooks": [
+          {
+            "title": "\"before all\" hook for \"should be able to forward and rewind video\"",
+            "fullTitle": "Video player \"before all\" hook for \"should be able to forward and rewind video\"",
+            "timedOut": false,
+            "duration": 29526,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
+            "pending": false,
+            "code": "await suitest.startTest('Video player');\nawait assert.openApp();\nawait snippetHomepageOpened();\n/**\n * Navigate to the video and open it using the snippet test.\n */\nawait snippetOpenVideo();",
+            "err": {
+              "message": "AssertionError [ERR_ASSERTION]: Element \"homepage\" was not found.",
+              "estack": "Error\n    at snippetHomepageOpened (watchMeTests/common.js:16:35)\n    at Context.before (watchMeTests/forwardingRewindingVideo.test.js:12:9)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
+            },
+            "isRoot": false,
+            "uuid": "679ca10f-b36b-4d2a-b2ed-407f32a763ce",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [],
+        "tests": [
+          {
+            "title": "should be able to forward and rewind video",
+            "fullTitle": "Video player should be able to forward and rewind video",
+            "timedOut": false,
+            "duration": 0,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "await assert.video().matches([\n\t{\n\t\tname: PROP.VIDEO_LENGTH,\n\t\tval: 1810,\n\t\ttype: COMP.GREATER,\n\t},\n\t{\n\t\tname: PROP.VIDEO_POSITION,\n\t\tval: 1000,\n\t\ttype: COMP.GREATER,\n\t},\n\t{\n\t\tname: PROP.VIDEO_STATE,\n\t\tval: VIDEO_STATE.PLAYING,\n\t},\n\t{\n\t\tname: PROP.VIDEO_URL,\n\t\tval: 'http://file.suite.st/sampleapp/api/video/a84d67e5-c6d4-41c0-9f70-cd8c7a5f6f4f.mp4',\n\t},\n]).timeout(10000);\n/**\n * Focus the \"Forward\" button on the control panel.\n */\nawait assert.press(VRC.DOWN);\nawait snapshotElement(pausedBtnFocused);\nawait assert.press(VRC.RIGHT);\nawait snapshotElement(forwardBtnFocused);\n/**\n * Forward the video.\n */\nawait assert.press(VRC.ENTER).repeat(4).interval(1000);\nawait assert.video().matches([\n\t{\n\t\tname: PROP.VIDEO_LENGTH,\n\t\tval: 30000,\n\t\ttype: COMP.GREATER,\n\t},\n\t{\n\t\tname: PROP.VIDEO_POSITION,\n\t\tval: 1810,\n\t\ttype: COMP.GREATER,\n\t},\n\t{\n\t\tname: PROP.VIDEO_STATE,\n\t\tval: VIDEO_STATE.PLAYING,\n\t},\n\t{\n\t\tname: PROP.VIDEO_URL,\n\t\tval: 'http://file.suite.st/sampleapp/api/video/a84d67e5-c6d4-41c0-9f70-cd8c7a5f6f4f.mp4',\n\t},\n]).timeout(3000);\n/**\n * Focus the Rewind button and rewind video.\n */\nawait assert.press(VRC.LEFT).until(\n\tsuitest.element(rewindBtnFocused.selector).matches(rewindBtnFocused.props)\n).repeat(6);\nawait suitest.press(VRC.ENTER).repeat(6).interval(2000);\nawait assert.video().matches([\n\t{\n\t\tname: PROP.VIDEO_LENGTH,\n\t\tval: 35000,\n\t\ttype: COMP.GREATER,\n\t},\n\t{\n\t\tname: PROP.VIDEO_POSITION,\n\t\tval: 7000,\n\t\ttype: COMP.LESSER,\n\t},\n\t{\n\t\tname: PROP.VIDEO_STATE,\n\t\tval: VIDEO_STATE.PLAYING,\n\t},\n\t{\n\t\tname: PROP.VIDEO_URL,\n\t\tval: 'http://file.suite.st/sampleapp/api/video/a84d67e5-c6d4-41c0-9f70-cd8c7a5f6f4f.mp4',\n\t},\n]);",
+            "err": {},
+            "isRoot": false,
+            "uuid": "0bc7670c-9999-4897-a7b5-46a8041d56b5",
+            "isHook": false,
+            "skipped": true
+          }
+        ],
+        "suites": [],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [
+          "0bc7670c-9999-4897-a7b5-46a8041d56b5"
+        ],
+        "duration": 0,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 0
+      },
+      {
+        "uuid": "3efc583f-e376-4444-8b3c-738a3e008417",
+        "title": "Navigation on Category Pages",
+        "fullFile": "/Users/antonbilan/projects/suitest-js-api-mocha-demo/watchMeTests/navigationOnCategoryPages.test.js",
+        "file": "/watchMeTests/navigationOnCategoryPages.test.js",
+        "beforeHooks": [
+          {
+            "title": "\"before all\" hook",
+            "fullTitle": "Navigation on Category Pages \"before all\" hook",
+            "timedOut": false,
+            "duration": 12884,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "await suitest.startTest('Navigation on Category Pages');\nawait assert.openApp();\nawait snippetHomepageOpened();",
+            "err": {},
+            "isRoot": false,
+            "uuid": "98749f3e-933e-4d86-abf7-15d095092dc9",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [],
+        "tests": [
+          {
+            "title": "should work as expected",
+            "fullTitle": "Navigation on Category Pages should work as expected",
+            "timedOut": false,
+            "duration": 4723,
+            "state": "passed",
+            "speed": "slow",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "/**\n *  Navigation through the categories in the menu bar functions correctly\n *  and category pages have the right content\n */\nawait suitest.press(VRC.UP);\nawait snapshotElement(watchmeBtnFocused);\n/**\n * Navigate to \"Pictures\" category and open it. \n */\nawait suitest.press(VRC.RIGHT).repeat(2);\nawait snapshotElement(pictureBtnFocused);\nawait assert.press(VRC.ENTER);\nawait snapshotElement(pageContent);\n/**\n * Navigate to\" Videos\" category, open it.\n */\nawait suitest.press([VRC.UP, VRC.RIGHT, VRC.ENTER]);\nawait snapshotElement(pageContent);",
+            "err": {},
+            "isRoot": false,
+            "uuid": "a8f26601-63d8-4ba3-9d72-ef1b928c566d",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "a8f26601-63d8-4ba3-9d72-ef1b928c566d"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 4723,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 0
+      },
+      {
+        "uuid": "a204e5fa-2cdc-4691-8d4a-29c6cb5f1b42",
+        "title": "Image gallery",
+        "fullFile": "/Users/antonbilan/projects/suitest-js-api-mocha-demo/watchMeTests/openImageInGallary.test.js",
+        "file": "/watchMeTests/openImageInGallary.test.js",
+        "beforeHooks": [
+          {
+            "title": "\"before all\" hook",
+            "fullTitle": "Image gallery \"before all\" hook",
+            "timedOut": false,
+            "duration": 13810,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "await suitest.startTest('Image gallery');\nawait assert.openApp();\nawait snippetHomepageOpened();",
+            "err": {},
+            "isRoot": false,
+            "uuid": "c9ee585a-ab47-44b6-a224-01aa12162af3",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [],
+        "tests": [
+          {
+            "title": "should open correct image",
+            "fullTitle": "Image gallery should open correct image",
+            "timedOut": false,
+            "duration": 3271,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
+            "pending": false,
+            "code": "/**\n * Navigate to the second image.\n */\nawait suitest.press(VRC.RIGHT);\nawait snapshotElement(imageCandiesFocused);\n/**\n * Open the \"Image Gallery\".\n */\nawait suitest.press(VRC.ENTER);\nawait snapshotElement(gallery);\nawait snapshotElement(imageCandiesInGalleryRepo);",
+            "err": {
+              "message": "AssertionError [ERR_ASSERTION]: Element \"gallery\" was not found.",
+              "estack": "Error\n    at snapshotElement (watchMeTests/utils.js:36:4)\n    at Context.it (watchMeTests/openImageInGallary.test.js:25:9)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
+            },
+            "isRoot": false,
+            "uuid": "2a680c8c-a0d6-4e3c-8d45-9dc0643a6426",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [],
+        "failures": [
+          "2a680c8c-a0d6-4e3c-8d45-9dc0643a6426"
+        ],
+        "pending": [],
+        "skipped": [],
+        "duration": 3271,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 0
+      },
+      {
+        "uuid": "600a6894-848a-4998-9f66-71b1ee374b18",
+        "title": "Back navigation",
+        "fullFile": "/Users/antonbilan/projects/suitest-js-api-mocha-demo/watchMeTests/returningToHomepage.test.js",
+        "file": "/watchMeTests/returningToHomepage.test.js",
+        "beforeHooks": [
+          {
+            "title": "\"before all\" hook",
+            "fullTitle": "Back navigation \"before all\" hook",
+            "timedOut": false,
+            "duration": 9331,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "await suitest.startTest('Back navigation');\nawait assert.openApp();\nawait snippetHomepageOpened();",
+            "err": {},
+            "isRoot": false,
+            "uuid": "2fc0972e-c80b-40cf-8945-4f3879766dc8",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [],
+        "tests": [
+          {
+            "title": "should navigate to \"Homepage\" after \"Back\" button press",
+            "fullTitle": "Back navigation should navigate to \"Homepage\" after \"Back\" button press",
+            "timedOut": false,
+            "duration": 5834,
+            "state": "passed",
+            "speed": "slow",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "/**\n * Navigate to the first image and open it in the \"Image Gallery\".\n */\nawait assert.press(VRC.RIGHT);\nawait snapshotElement(imageCandiesFocused);\nawait suitest.press(VRC.ENTER);\nawait snapshotElement(player);\n/**\n * Press the \"Back\" button and make sure that the last opened image is focused.\n */\nawait assert.press(VRC.BACK);\nawait snapshotElement(imageCandiesFocused);\n/**\n * Navigate to the \"Image Folder\".\n */\nawait assert.press([VRC.LEFT, VRC.DOWN]);\n/**\n * Open the \"Image Folder\" and check that the image is focused.\n */\nawait assert.press(VRC.ENTER);\nawait snapshotElement(folderPathImages);\nawait snapshotElement(imageInFolderChariesFocused);\n/**\n * Return to the \"Homepage\" and check if the last element is focused.\n */\nawait assert.press(VRC.BACK);\nawait snapshotElement(imagesFolder)",
+            "err": {},
+            "isRoot": false,
+            "uuid": "dd6fddd0-2cb3-4d0b-890a-fa9874c0dc89",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "dd6fddd0-2cb3-4d0b-890a-fa9874c0dc89"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 5834,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 0
+      },
+      {
+        "uuid": "66f532b2-5339-4ecd-a1da-ae084d530dfe",
+        "title": "Basic functionality",
+        "fullFile": "/Users/antonbilan/projects/suitest-js-api-mocha-demo/watchMeTests/welcomeToSuitest.test.js",
+        "file": "/watchMeTests/welcomeToSuitest.test.js",
+        "beforeHooks": [
+          {
+            "title": "\"before all\" hook",
+            "fullTitle": "Basic functionality \"before all\" hook",
+            "timedOut": false,
+            "duration": 13219,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "await suitest.startTest('Basic functionality');\n/**\n * WatchMe is an HbbTV application that has been adapted to work in Chrome and Firefox.\n * The following line opens the WatchMe application on the connected device.\n */\nawait assert.openApp();\n/**\n * Every application needs some time to initialize before it is ready to receive any user input.\n * In your test case always make sure that you are past that point before continuing with anything else.\n *\n * Since this check will be repeated more than once it is a good idea to put them in a separate function.\n *\n */\nawait snippetHomepageOpened();",
+            "err": {},
+            "isRoot": false,
+            "uuid": "a27addc4-01fd-41d3-a7cf-cf568df36f4b",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [],
+        "tests": [
+          {
+            "title": "should work correctly",
+            "fullTitle": "Basic functionality should work correctly",
+            "timedOut": false,
+            "duration": 3254,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
+            "pending": false,
+            "code": "/**\n * Now that the application is ready to receive user input, send a key to it.\n * Below is the simplest version of the \"Press\" line that sends a navigational key press to the WatchMe app.\n *\n */\nawait suitest.press(VRC.RIGHT);\n/**\n * Pressing \"Right\" should have highlighted a first image on the WatchMe homepage.\n * Below we will verify that this indeed did happen. There are 2 interesting things about the line below:\n *\n * 1. Since we have sent some input to the line we must allow it some time to process it.\n * This is why we are waiting until our element gets the highlight.\n * Execution times will vary depending on the device. In this case we are allowing (an exaggerated) up to 2 seconds\n * for the device to respond.\n *\n * 2. This type of the line is called \"Assertion\". In this case the subject of this assertion\n * is the \"view element\" - a piece of the app's layout. In Suitest you store your view elements\n * in an \" Element repository\" or you can pass selector to element chain.\n *\n */\nawait snapshotElement(imageCandiesFocused);\n/**\n * The previous line has made sure that the focus is on the first item in our list.\n * Pressing OK on that item should open the image gallery, let's try that this really works.\n * We will reuse the knowledge from the previous step.\n */\nawait assert.press(VRC.ENTER);\nawait snapshotElement(imageCandiesInGallery);\n/**\n * This is enough for one test, be sure to check the other test examples. It is always a good idea to keep your test cases\n * as simple as possible. Ideally any test scenario should not be longer than 30 test lines (50 is an extreme case).\n * Another important rule is to have every scenario test a *single* thing. If you need to test two different\n * things make two different scenarios.\n *\n * Generally your test cases should be of the 2 types:\n *\n * a) a \"Feature test\" - a scenario that verifies that a particular aspect of the apps feature works.\n * b) a \"User journey test\" - a scenario that verifies that the user can do a particular thing in the app.\n *\n * We recommend that you follow the above rules with both of these scenario types.\n *\n */",
+            "err": {
+              "message": "AssertionError [ERR_ASSERTION]: Element {\"css\":\"#imageplayer_img\"} was not found.",
+              "estack": "Error\n    at snapshotElement (watchMeTests/utils.js:36:4)\n    at Context.it (watchMeTests/welcomeToSuitest.test.js:54:9)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
+            },
+            "isRoot": false,
+            "uuid": "8f49222b-6fa4-4dfa-bbb6-71ed4e6f5c18",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [],
+        "failures": [
+          "8f49222b-6fa4-4dfa-bbb6-71ed4e6f5c18"
+        ],
+        "pending": [],
+        "skipped": [],
+        "duration": 3254,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 0
+      }
+    ],
+    "passes": [],
+    "failures": [],
+    "pending": [],
+    "skipped": [],
+    "duration": 0,
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 0
+  },
+  "copyrightYear": 2019
+}

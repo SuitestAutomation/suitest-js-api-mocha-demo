@@ -24,3 +24,23 @@ so you can use your own app for testing.
  configuration in WatchMe app. So make sure you properly adjusted `.suitestrc` file
 and then you can launch them with `npm run interactive:watchMe` or 
 `npm run automated:watchMe`.
+
+## Reporters
+
+There are some examples how Suitest can be used with different reporters
+
+### mocha-junit-reporter reporter
+
+example script - `automated:watchMe:junit-reporter`
+also possible to add `[hash]` to file name or path to prevent overriding results
+results can be viewed by `npx xunit-viewer --results=reports --port=0`
+
+### mocha's xunit reporter
+
+example script - `automated:watchMe:xunit` directory for reports should exists otherwise it
+throws error
+results can be viewed by `npx xunit-viewer --results=xunit-reports --port=0`
+
+### mochawesome reporter
+
+example script - `automated:watchMe:mochawesome` Generates html and json reports

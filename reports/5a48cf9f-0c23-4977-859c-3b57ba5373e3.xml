@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="41.510000000000005" tests="5" failures="0">
+  <testsuite name="Root Suite" timestamp="2019-05-30T11:30:36" tests="0" failures="0" time="0">
+    <properties>
+      <property name="DEVICE_ID" value="5a48cf9f-0c23-4977-859c-3b57ba5373e3"/>
+    </properties>
+  </testsuite>
+  <testsuite name="Video player" timestamp="2019-05-30T11:30:36" tests="1" file="/Users/antonbilan/projects/suitest-js-api-mocha-demo/watchMeTests/forwardingRewindingVideo.test.js" failures="0" time="27.617">
+    <properties>
+      <property name="DEVICE_ID" value="5a48cf9f-0c23-4977-859c-3b57ba5373e3"/>
+    </properties>
+    <testcase name="Video player should be able to forward and rewind video" time="27.617" classname="should be able to forward and rewind video">
+    </testcase>
+  </testsuite>
+  <testsuite name="Navigation on Category Pages" timestamp="2019-05-30T11:31:30" tests="1" file="/Users/antonbilan/projects/suitest-js-api-mocha-demo/watchMeTests/navigationOnCategoryPages.test.js" failures="0" time="3.858">
+    <properties>
+      <property name="DEVICE_ID" value="5a48cf9f-0c23-4977-859c-3b57ba5373e3"/>
+    </properties>
+    <testcase name="Navigation on Category Pages should work as expected" time="3.858" classname="should work as expected">
+    </testcase>
+  </testsuite>
+  <testsuite name="Image gallery" timestamp="2019-05-30T11:31:48" tests="1" file="/Users/antonbilan/projects/suitest-js-api-mocha-demo/watchMeTests/openImageInGallary.test.js" failures="0" time="3.396">
+    <properties>
+      <property name="DEVICE_ID" value="5a48cf9f-0c23-4977-859c-3b57ba5373e3"/>
+    </properties>
+    <testcase name="Image gallery should open correct image" time="3.396" classname="should open correct image">
+    </testcase>
+  </testsuite>
+  <testsuite name="Back navigation" timestamp="2019-05-30T11:32:04" tests="1" file="/Users/antonbilan/projects/suitest-js-api-mocha-demo/watchMeTests/returningToHomepage.test.js" failures="0" time="5.085">
+    <properties>
+      <property name="DEVICE_ID" value="5a48cf9f-0c23-4977-859c-3b57ba5373e3"/>
+    </properties>
+    <testcase name="Back navigation should navigate to &quot;Homepage&quot; after &quot;Back&quot; button press" time="5.085" classname="should navigate to &quot;Homepage&quot; after &quot;Back&quot; button press">
+    </testcase>
+  </testsuite>
+  <testsuite name="Basic functionality" timestamp="2019-05-30T11:32:24" tests="1" file="/Users/antonbilan/projects/suitest-js-api-mocha-demo/watchMeTests/welcomeToSuitest.test.js" failures="0" time="1.554">
+    <properties>
+      <property name="DEVICE_ID" value="5a48cf9f-0c23-4977-859c-3b57ba5373e3"/>
+    </properties>
+    <testcase name="Basic functionality should work correctly" time="1.554" classname="should work correctly">
+    </testcase>
+  </testsuite>
+</testsuites>
