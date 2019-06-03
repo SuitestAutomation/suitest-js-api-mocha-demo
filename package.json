@@ -16,11 +16,11 @@
     "automated": "suitest automated mocha --no-timeouts --exit \"./test/dummy.test.js\"",
     "automated:logs": "suitest automated --log-dir=e2e mocha --no-timeouts --exit \"./test/dummy.test.js\"",
     "interactive:watchMe": "suitest interactive mocha --reporter mocha-junit-reporter --reporter-options outputs=true --no-timeouts --exit \"./watchMeTests/*.test.js\"",
-    "automated:watchMe": "suitest automated mocha --reporter mocha-junit-reporter --reporter-options outputs=true,mochaFile=./path_to_your/report[hash].xml,toConsole=true --no-timeouts --exit \"./watchMeTests/*.test.js\"",
-    "automated:watchMe:junit-reporter": "suitest automated --log-dir=e2e PROPERTIES=DEVICE_ID:'\"${SUITEST_CHILD_PROCESS%%|*}\"' mocha --reporter mocha-junit-reporter --reporter-options outputs=true,toConsole=true,mochaFile=./reports/'\"${SUITEST_CHILD_PROCESS%%|*}\"'.xml --no-timeouts --exit \"./watchMeTests/*.test.js\"",
-    "automated:watchMe:xunit": "suitest automated --log-dir=e2e mocha --reporter xunit --reporter-options output=./xunit-reports/'\"${SUITEST_CHILD_PROCESS%%|*}\"'.xml,suiteName=DEVICE_ID-'\"${SUITEST_CHILD_PROCESS%%|*}\"' --no-timeouts --exit \"./watchMeTests/*.test.js\"",
+    "automated:watchMe": "suitest automated mocha --no-timeouts --exit \"./watchMeTests/*.test.js\"",
+    "automated:watchMe:junit": "suitest automated --log-dir=e2e PROPERTIES=DEVICE_ID:'\"${SUITEST_CHILD_PROCESS%%|*}\"' mocha --reporter mocha-junit-reporter --reporter-options outputs=true,toConsole=true,mochaFile=./reports/junit/'\"${SUITEST_CHILD_PROCESS%%|*}\"'.xml --no-timeouts --exit \"./watchMeTests/*.test.js\"",
+    "automated:watchMe:xunit": "suitest automated --log-dir=e2e mocha --reporter xunit --reporter-options output=./reports/xunit/'\"${SUITEST_CHILD_PROCESS%%|*}\"'.xml,suiteName=DEVICE_ID-'\"${SUITEST_CHILD_PROCESS%%|*}\"' --no-timeouts --exit \"./watchMeTests/*.test.js\"",
     "automated:watchMe:tap": "suitest automated --log-dir=e2e mocha --reporter tap  --no-timeouts --exit \"./watchMeTests/*.test.js\"",
-    "automated:watchMe:mochawesome": "suitest automated --log-dir=e2e mocha --reporter mochawesome --reporter-options reportTitle=DEVICE_ID-'\"${SUITEST_CHILD_PROCESS%%|*}\"',reportFilename='\"${SUITEST_CHILD_PROCESS%%|*}\"',autoOpen=true  --no-timeouts --exit \"./watchMeTests/*.test.js\""
+    "automated:watchMe:mochawesome": "suitest automated --log-dir=e2e mocha --reporter mochawesome --reporter-options reportTitle=DEVICE_ID-'\"${SUITEST_CHILD_PROCESS%%|*}\"',reportFilename='\"${SUITEST_CHILD_PROCESS%%|*}\"',reportDir='./reports/html',autoOpen=true  --no-timeouts --exit \"./watchMeTests/*.test.js\""
   },
   "devDependencies": {
     "xunit-viewer": "^5.1.10"

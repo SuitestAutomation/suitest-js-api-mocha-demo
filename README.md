@@ -31,16 +31,20 @@ There are some examples how Suitest can be used with different reporters
 
 ### mocha-junit-reporter reporter
 
-example script - `automated:watchMe:junit-reporter`
+example script - `automated:watchMe:junit`
 also possible to add `[hash]` to file name or path to prevent overriding results
-results can be viewed by `npx xunit-viewer --results=reports --port=0`
+results can be viewed by `npx xunit-viewer --results=./reports/junit --port=0`
 
 ### mocha's xunit reporter
 
 example script - `automated:watchMe:xunit` directory for reports should exists otherwise it
 throws error
-results can be viewed by `npx xunit-viewer --results=xunit-reports --port=0`
+results can be viewed by `npx xunit-viewer --results=./reports/xunit --port=0`
 
 ### mochawesome reporter
 
 example script - `automated:watchMe:mochawesome` Generates html and json reports
+
+### tap reporter
+
+example script - `automated:watchMe:tab` just outputs to console
