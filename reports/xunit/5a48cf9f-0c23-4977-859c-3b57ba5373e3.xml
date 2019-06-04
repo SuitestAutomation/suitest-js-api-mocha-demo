@@ -1,11 +1,7 @@
-<testsuite name="DEVICE_ID-5a48cf9f-0c23-4977-859c-3b57ba5373e3" tests="5" failures="0" errors="1" skipped="0" timestamp="Thu, 30 May 2019 10:32:12 GMT" time="135.418">
-<testcase classname="Video player" name="should be able to forward and rewind video" time="28.287"/>
-<testcase classname="Navigation on Category Pages" name="should work as expected" time="2.922"/>
-<testcase classname="Image gallery" name="should open correct image" time="2.777"><failure>Element &#x22;gallery&#x22; was not found.
-Error
-    at snapshotElement (watchMeTests/utils.js:36:4)
-    at Context.it (watchMeTests/openImageInGallary.test.js:25:9)
-    at process._tickCallback (internal/process/next_tick.js:68:7)</failure></testcase>
-<testcase classname="Back navigation" name="should navigate to &#x22;Homepage&#x22; after &#x22;Back&#x22; button press" time="8.74"/>
-<testcase classname="Basic functionality" name="should work correctly" time="1.644"/>
+<testsuite name="DEVICE_ID-5a48cf9f-0c23-4977-859c-3b57ba5373e3" tests="5" failures="0" errors="0" skipped="0" timestamp="Tue, 04 Jun 2019 07:57:31 GMT" time="342.787">
+<testcase classname="Video player" name="should be able to forward and rewind video" time="22.581"/>
+<testcase classname="Navigation on Category Pages" name="should work as expected" time="2.453"/>
+<testcase classname="Image gallery" name="should open correct image" time="2.49"/>
+<testcase classname="Back navigation" name="should navigate to &#x22;Homepage&#x22; after &#x22;Back&#x22; button press" time="3.35"/>
+<testcase classname="Basic functionality" name="should work correctly" time="1.467"/>
 </testsuite>
