@@ -54,3 +54,20 @@ Generates html and json reports.
 ### tap reporter
 
 Example script: `automated:watchMe:tap`
+
+### Slack reporter (mocha-ci-slack-reporter)
+
+* Add Slack reporter to the project:
+```
+yarn add mocha-ci-slack-reporter --dev
+```
+
+* For running mocha with mocha-ci-slack-reporter you need to specify it as an reporter and [required reporter options](https://github.com/hiddentao/mocha-ci-slack-reporter#usage):
+  * **username** - can be specified any name
+  * **channel** - Slack channel where messages will be sends
+  * **url** - _Incoming Webhooks_ url from your Slack application (for generating _Incoming Webhooks_ url you can go through **[this guide](https://api.slack.com/messaging/webhooks#getting-started)**). Slack _Incoming Webhooks_ url can be looks like https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX. **Note:** _Incoming Webhooks_ url contains secret about your Slack application - dont use it in public sources
+
+* After installing mocha-ci-slack-reporter and getting all needed data, resulting command line can be:
+```
+suitest interactive mocha --reporter mocha-ci-slack-reporter --reporter-options username=username,url=https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX,channel=#anychannel --no-timeouts --exit "./test/dummy.test.js"
+```
