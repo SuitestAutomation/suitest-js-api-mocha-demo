@@ -7,7 +7,7 @@ const {assert, VRC, PROP, COMP, VIDEO_STATE} = suitest;
 describe('Video player', async() => {
 
 	before(async() => {
-		await suitest.startTest('Video player');
+		await suitest.startTest();
 		await assert.openApp();
 		await snippetHomepageOpened();
 		/**

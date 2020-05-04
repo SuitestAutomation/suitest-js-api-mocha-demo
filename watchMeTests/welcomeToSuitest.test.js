@@ -7,7 +7,7 @@ const {assert, VRC} = suitest;
 describe('Basic functionality', async() => {
 
 	before(async() => {
-		await suitest.startTest('Basic functionality');
+		await suitest.startTest();
 		/**
 		 * WatchMe is an HbbTV application that has been adapted to work in Chrome and Firefox.
 		 * The following line opens the WatchMe application on the connected device.

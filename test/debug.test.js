@@ -4,7 +4,7 @@ const {assert} = suitest;
 describe('With debugger', () => {
 	before(async() => {
 		// Start test
-		await suitest.startTest('with-debugger');
+		await suitest.startTest();
 	});
 
 	it('should stop at breakpoint and start debugger', async() => {

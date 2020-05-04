@@ -7,7 +7,7 @@ const {snapshotElement} = require('./utils');
 describe('Navigation on Category Pages', async() => {
 
 	before(async() => {
-		await suitest.startTest('Navigation on Category Pages');
+		await suitest.startTest();
 		await assert.openApp();
 		await snippetHomepageOpened();
 	});
