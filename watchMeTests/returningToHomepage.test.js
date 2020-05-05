@@ -7,7 +7,7 @@ const {player, imageCandiesFocused, folderPathImages, imageInFolderChariesFocuse
 describe('Back navigation', async() => {
 
 	before(async() => {
-		await suitest.startTest('Back navigation');
+		await suitest.startTest();
 		await assert.openApp();
 		await snippetHomepageOpened();
 	});

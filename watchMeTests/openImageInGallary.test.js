@@ -7,7 +7,7 @@ const {imageCandiesFocused, gallery, imageCandiesInGalleryRepo} = require('./ele
 describe('Image gallery', async() => {
 
 	before(async() => {
-		await suitest.startTest('Image gallery');
+		await suitest.startTest();
 		await assert.openApp();
 		await snippetHomepageOpened();
 	});

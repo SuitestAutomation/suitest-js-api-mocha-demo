@@ -4,7 +4,7 @@ const {assert} = suitest;
 describe('My super cool test', () => {
 	before(async() => {
 		// Start test
-		await suitest.startTest('my-super-cool-test');
+		await suitest.startTest();
 	});
 
 	it('should pass', async() => {

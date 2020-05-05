@@ -4,7 +4,7 @@ const {assert} = suitest;
 describe('Interactive REPL', () => {
 	before(async() => {
 		// Start test
-		await suitest.startTest('interactive-repl');
+		await suitest.startTest();
 	});
 
 	it('should be started with available variables: suitest, body', async() => {
