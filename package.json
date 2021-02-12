@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Demo set up for Suitest JS API",
   "dependencies": {
-    "cross-env": "^5.2.0",
-    "mocha": "^6.1.4",
-    "mocha-junit-reporter": "^1.22.0",
-    "mochawesome": "^3.1.2",
-    "suitest-js-api": "^1.16.11"
+    "cross-env": "^7.0.3",
+    "mocha": "^8.3.0",
+    "mocha-junit-reporter": "^2.0.0",
+    "mochawesome": "^6.2.1",
+    "suitest-js-api": "^2.1.0"
   },
   "scripts": {
     "interactive": "suitest interactive mocha --reporter mocha-junit-reporter --no-timeouts --exit \"./test/dummy.test.js\"",
@@ -30,6 +30,6 @@
   },
   "devDependencies": {
     "mocha-ci-slack-reporter": "^1.0.1",
-    "xunit-viewer": "^5.1.10"
+    "xunit-viewer": "^7.0.1"
   }
 }
