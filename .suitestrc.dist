@@ -1,11 +1,16 @@
 {
-  "username": "",
-  "password": "",
-  "orgId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "tokenId": "",
+  "tokenPassword": "",
   "deviceId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
   "appConfigId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-
-  "tokenKey": "xxxxxxxxxx",
-  "tokenPassword": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "testPackId": 1111
+  "presets": {
+    "firstPreset": {
+      "device": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "config": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+    },
+    "secondPreset": {
+      "device": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "config": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+    }
+  }
 }

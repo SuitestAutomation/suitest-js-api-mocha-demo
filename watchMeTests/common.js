@@ -1,7 +1,5 @@
 const suitest = require('suitest-js-api');
-const {assert, VRC} = suitest;
-const {homepage, menu, folderAllItemsFocused, videoBigBunnyFocused} = require('./elements');
-const {snapshotElement} = require('./utils');
+const {assert, VRC, PROP} = suitest;
 
 /**
  * Reusable helper functions, a.k.a. "Run test" line in test editor
@@ -9,24 +7,38 @@ const {snapshotElement} = require('./utils');
 module.exports = {
 
 	/**
-	 * Make sure that home page is opened
+	 * @description Make sure that home page is opened
 	 * @returns {Promise<void>}
 	 */
-	snippetHomepageOpened: async() => {
-		await snapshotElement(homepage).timeout(10000);
-		await snapshotElement(menu);
-		await snapshotElement(folderAllItemsFocused);
+	async snippetHomepageOpened() {
+		await assert.element('App').exists().timeout(10000);
+		await assert.element('Logo').matches([
+			PROP.IMAGE,
+			PROP.OPACITY,
+		]).timeout(5000);
+		await assert.element('Caminandes 1').visible().timeout(10000);
+		await assert.element('Cominandes 1 img').matches([
+			PROP.IMAGE,
+			PROP.IMAGE_LOAD_STATE,
+		]).timeout(5000);
+		await assert.element('Cominandes 1 title focused').matches([
+			PROP.TEXT_COLOR,
+			PROP.TEXT_CONTENT,
+		]).timeout(5000);
 	},
 
 	/**
-	 * Open video to start playback
+	 * @description Open video to start playback
 	 * @returns {Promise<void>}
 	 */
-	snippetOpenVideo: async() => {
+	async snippetOpenBigBunnyVideo() {
 		await assert.press(VRC.RIGHT).until(
-			suitest.element(videoBigBunnyFocused.selector).matches(videoBigBunnyFocused.props)
-		).interval(1000).repeat(7);
-		await assert.press(VRC.ENTER);
-	}
+			suitest.element('Big Bunny title focused').matches([
+				PROP.TEXT_COLOR,
+				PROP.TEXT_CONTENT,
+			])
+		).repeat(6).interval(800);
+		await assert.press(VRC.ENTER).interval(1000);
+	},
 
 };
