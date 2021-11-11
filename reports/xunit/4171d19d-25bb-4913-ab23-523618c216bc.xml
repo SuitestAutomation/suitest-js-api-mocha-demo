@@ -1,0 +1,9 @@
+<testsuite name="DEVICE_ID-4171d19d-25bb-4913-ab23-523618c216bc" tests="7" failures="0" errors="0" skipped="0" timestamp="Wed, 10 Nov 2021 11:00:20 GMT" time="165.521">
+<testcase classname="Check Video Progress" name="Check if video progress attributes are changed accordingly with video playback." time="70.881"/>
+<testcase classname="Forwarding/Rewinding Video" name="Check if video playback can be forwarded and then rewound with the buttons in the control panel." time="17.477"/>
+<testcase classname="Navigating on Homepage" name="Check if the navigation arrows function throughout the &#x22;Homepage&#x22; and that the focus is displayed correctly." time="11.446"/>
+<testcase classname="Pausing/Resuming Video" name="Check if video playback can be paused and then resumed with the buttons in the control panel." time="8.931"/>
+<testcase classname="Returning to Homepage" name="Check if returning to the &#x22;Homepage&#x22; works with the &#x22;Back&#x22; button and that the focus has the correct position every time." time="18.024"/>
+<testcase classname="Starting Video Playback" name="Check if the video is accessible from the &#x22;Homepage&#x22; and that playback starts correctly." time="4.902"/>
+<testcase classname="Welcome to Suitest" name="This is a sample test case on a sample app called WatchMe." time="2.631"/>
+</testsuite>

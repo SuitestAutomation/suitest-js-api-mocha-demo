@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="168.5310" tests="7" failures="0">
+  <testsuite name="Root Suite" timestamp="2021-11-10T12:14:52" tests="0" time="0.0000" failures="0">
+    <properties>
+      <property name="DEVICE_ID" value="4171d19d-25bb-4913-ab23-523618c216bc"/>
+    </properties>
+  </testsuite>
+  <testsuite name="Check Video Progress" timestamp="2021-11-10T12:14:52" tests="1" file="C:\Development\suitest-js-api-mocha-demo-c1\watchMeTests\checkVideoProgress.test.js" time="91.9670" failures="0">
+    <properties>
+      <property name="DEVICE_ID" value="4171d19d-25bb-4913-ab23-523618c216bc"/>
+    </properties>
+    <testcase name="Check Video Progress Check if video progress attributes are changed accordingly with video playback." time="75.5520" classname="Check if video progress attributes are changed accordingly with video playback.">
+    </testcase>
+  </testsuite>
+  <testsuite name="Forwarding/Rewinding Video" timestamp="2021-11-10T12:16:24" tests="1" file="C:\Development\suitest-js-api-mocha-demo-c1\watchMeTests\forwardingRewindingVideo.test.js" time="24.4770" failures="0">
+    <properties>
+      <property name="DEVICE_ID" value="4171d19d-25bb-4913-ab23-523618c216bc"/>
+    </properties>
+    <testcase name="Forwarding/Rewinding Video Check if video playback can be forwarded and then rewound with the buttons in the control panel." time="17.3970" classname="Check if video playback can be forwarded and then rewound with the buttons in the control panel.">
+    </testcase>
+  </testsuite>
+  <testsuite name="Navigating on Homepage" timestamp="2021-11-10T12:16:48" tests="1" file="C:\Development\suitest-js-api-mocha-demo-c1\watchMeTests\navigatingOnHomepage.test.js" time="12.4810" failures="0">
+    <properties>
+      <property name="DEVICE_ID" value="4171d19d-25bb-4913-ab23-523618c216bc"/>
+    </properties>
+    <testcase name="Navigating on Homepage Check if the navigation arrows function throughout the &quot;Homepage&quot; and that the focus is displayed correctly." time="11.2980" classname="Check if the navigation arrows function throughout the &quot;Homepage&quot; and that the focus is displayed correctly.">
+    </testcase>
+  </testsuite>
+  <testsuite name="Pausing/Resuming Video" timestamp="2021-11-10T12:17:01" tests="1" file="C:\Development\suitest-js-api-mocha-demo-c1\watchMeTests\pausingResumingVideo.test.js" time="15.4930" failures="0">
+    <properties>
+      <property name="DEVICE_ID" value="4171d19d-25bb-4913-ab23-523618c216bc"/>
+    </properties>
+    <testcase name="Pausing/Resuming Video Check if video playback can be paused and then resumed with the buttons in the control panel." time="9.0010" classname="Check if video playback can be paused and then resumed with the buttons in the control panel.">
+    </testcase>
+  </testsuite>
+  <testsuite name="Returning to Homepage" timestamp="2021-11-10T12:17:16" tests="1" file="C:\Development\suitest-js-api-mocha-demo-c1\watchMeTests\returningToHomepage.test.js" time="13.4490" failures="0">
+    <properties>
+      <property name="DEVICE_ID" value="4171d19d-25bb-4913-ab23-523618c216bc"/>
+    </properties>
+    <testcase name="Returning to Homepage Check if returning to the &quot;Homepage&quot; works with the &quot;Back&quot; button and that the focus has the correct position every time." time="12.2150" classname="Check if returning to the &quot;Homepage&quot; works with the &quot;Back&quot; button and that the focus has the correct position every time.">
+    </testcase>
+  </testsuite>
+  <testsuite name="Starting Video Playback" timestamp="2021-11-10T12:17:30" tests="1" file="C:\Development\suitest-js-api-mocha-demo-c1\watchMeTests\startingVideoPlayback.test.js" time="6.7400" failures="0">
+    <properties>
+      <property name="DEVICE_ID" value="4171d19d-25bb-4913-ab23-523618c216bc"/>
+    </properties>
+    <testcase name="Starting Video Playback Check if the video is accessible from the &quot;Homepage&quot; and that playback starts correctly." time="5.3650" classname="Check if the video is accessible from the &quot;Homepage&quot; and that playback starts correctly.">
+    </testcase>
+  </testsuite>
+  <testsuite name="Welcome to Suitest" timestamp="2021-11-10T12:17:37" tests="1" file="C:\Development\suitest-js-api-mocha-demo-c1\watchMeTests\welcomeToSuitest.test.js" time="3.9210" failures="0">
+    <properties>
+      <property name="DEVICE_ID" value="4171d19d-25bb-4913-ab23-523618c216bc"/>
+    </properties>
+    <testcase name="Welcome to Suitest This is a sample test case on a sample app called WatchMe." time="2.6950" classname="This is a sample test case on a sample app called WatchMe.">
+    </testcase>
+  </testsuite>
+</testsuites>

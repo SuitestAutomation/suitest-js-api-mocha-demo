@@ -1,45 +1,76 @@
-const suitest = require('suitest-js-api');
-const {assert, VRC} = suitest;
 const {snippetHomepageOpened} = require('./common');
-const {snapshotElement} = require('./utils');
-const {player, imageCandiesFocused, folderPathImages, imageInFolderChariesFocused, imagesFolder} = require('./elements');
+const suitest = require('suitest-js-api');
+const {assert, VRC, PROP, VIDEO_STATE} = suitest;
 
-describe('Back navigation', async() => {
 
+describe('Returning to Homepage', () => {
 	before(async() => {
-		await suitest.startTest();
 		await assert.openApp();
 		await snippetHomepageOpened();
 	});
 
-	it('should navigate to "Homepage" after "Back" button press', async() => {
+	it('Check if returning to the "Homepage" works with the "Back" button and that the focus has the correct position every time.', async () => {
+		await assert.press(VRC.RIGHT).interval(1000);
+		await assert.element('Cominandes 2 title focused').matches([
+			PROP.OPACITY,
+			PROP.TEXT_COLOR,
+			PROP.TEXT_CONTENT,
+		]).timeout(2000);
+		await assert.press(VRC.ENTER).interval(1000);
+		await assert.element('Playback panel').visible().timeout(10000);
 		/**
-		 * Navigate to the first image and open it in the "Image Gallery".
+		 * Press on the "Back" button.
 		 */
-		await assert.press(VRC.RIGHT);
-		await snapshotElement(imageCandiesFocused);
-		await suitest.press(VRC.ENTER);
-		await snapshotElement(player);
+		await assert.press(VRC.LEFT).until(
+			suitest.element('Back button focused').matches([
+				PROP.BG_COLOR,
+				PROP.OPACITY,
+				PROP.TEXT_CONTENT,
+			])
+		).repeat(3).interval(1000);
+		await assert.press(VRC.ENTER).interval(1000);
 		/**
-		 * Press the "Back" button and make sure that the last opened image is focused.
+		 * Check that the "Homepage" is opened and "Cominandes 2" video is focused.
 		 */
-		await assert.press(VRC.BACK);
-		await snapshotElement(imageCandiesFocused);
+		await assert.video().doesNot().exist().timeout(3000);
+		await assert.element('Logo').matches([
+			PROP.IMAGE,
+			PROP.OPACITY,
+		]).timeout(2000);
+		await assert.element('Cominandes 2 title focused').matches([
+			PROP.OPACITY,
+			PROP.TEXT_COLOR,
+			PROP.TEXT_CONTENT,
+		]).timeout(2000);
 		/**
-		 * Navigate to the "Image Folder".
+		 * Navigate to the "Cominandes 3" video and open it.
 		 */
-		await assert.press([VRC.LEFT, VRC.DOWN]);
+		await assert.press(VRC.RIGHT).interval(1000);
+		await assert.element('Cominandes 3 title focused').matches([
+			PROP.OPACITY,
+			PROP.TEXT_COLOR,
+			PROP.TEXT_CONTENT,
+		]).timeout(4000);
 		/**
-		 * Open the "Image Folder" and check that the image is focused.
+		 * Open the video and check that it is opened.
 		 */
-		await assert.press(VRC.ENTER);
-		await snapshotElement(folderPathImages);
-		await snapshotElement(imageInFolderChariesFocused);
+		await assert.press(VRC.ENTER).interval(1000);
+		await assert.video().matches([
+			{
+				name: PROP.VIDEO_STATE,
+				val: VIDEO_STATE.PLAYING,
+			},
+		]).timeout(12000);
+		await assert.element('Playback panel').visible().timeout(5000);
 		/**
-		 * Return to the "Homepage" and check if the last element is focused.
+		 * Return to the "Homepage" and check if the "Cominandes 3" video is focused.
 		 */
-		await assert.press(VRC.BACK);
-		await snapshotElement(imagesFolder)
+		await assert.press(VRC.BACK).interval(1000);
+		await assert.video().doesNot().exist().timeout(5000);
+		await assert.element('Cominandes 3 title focused').matches([
+			PROP.OPACITY,
+			PROP.TEXT_COLOR,
+			PROP.TEXT_CONTENT,
+		]).timeout(10000);
 	});
-
 });

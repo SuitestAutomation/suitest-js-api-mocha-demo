@@ -1,8 +1,6 @@
 {
-  "tokenId": "",
-  "tokenPassword": "",
-  "deviceId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-  "appConfigId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "extends": ".suitestrc.base.json",
+  "preset": ["firstPreset", "secondPreset"],
   "presets": {
     "firstPreset": {
       "device": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",

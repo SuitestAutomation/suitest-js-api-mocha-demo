@@ -62,3 +62,7 @@ demo/testConfig.js
 
 # suitestrc
 .suitestrc
+
+# editors files
+.idea
+.vscode

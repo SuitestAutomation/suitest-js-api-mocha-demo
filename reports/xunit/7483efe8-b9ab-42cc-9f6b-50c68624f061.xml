@@ -1,0 +1,15 @@
+<testsuite name="DEVICE_ID-7483efe8-b9ab-42cc-9f6b-50c68624f061" tests="7" failures="0" errors="1" skipped="0" timestamp="Wed, 10 Nov 2021 11:00:23 GMT" time="168.514">
+<testcase classname="Check Video Progress" name="Check if video progress attributes are changed accordingly with video playback." time="71.382"/>
+<testcase classname="Forwarding/Rewinding Video" name="Check if video playback can be forwarded and then rewound with the buttons in the control panel." time="17.476"/>
+<testcase classname="Navigating on Homepage" name="Check if the navigation arrows function throughout the &#x22;Homepage&#x22; and that the focus is displayed correctly." time="11.326"/>
+<testcase classname="Pausing/Resuming Video" name="Check if video playback can be paused and then resumed with the buttons in the control panel." time="9.006"/>
+<testcase classname="Returning to Homepage" name="Check if returning to the &#x22;Homepage&#x22; works with the &#x22;Back&#x22; button and that the focus has the correct position every time." time="22.04"><failure>&#x1B;[31m&#x2716; &#x1B;[0mAssert: &#x1B;[32mvideo&#x1B;[0m timeout &#x1B;[4m12s&#x1B;[0m
+  &#x1B;[31m&#x2716; &#x1B;[0mvideo state = &#x1B;[4mplaying&#x1B;[0m
+                &#x2192; stopped
+  &#x1B;[31mfail: &#x1B;[0mCondition was not met
+Error
+    at Context.&#x3C;anonymous&#x3E; (watchMeTests/returningToHomepage.test.js:63:6)
+    at processTicksAndRejections (node:internal/process/task_queues:94:5)</failure></testcase>
+<testcase classname="Starting Video Playback" name="Check if the video is accessible from the &#x22;Homepage&#x22; and that playback starts correctly." time="5.386"/>
+<testcase classname="Welcome to Suitest" name="This is a sample test case on a sample app called WatchMe." time="2.643"/>
+</testsuite>
