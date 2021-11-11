@@ -35,7 +35,7 @@ describe('Welcome to Suitest', async() => {
 		 *
 		 * 2. This type of line is called "Assertion". In this case, the subject of this assertion is the "view element" - a piece of the app's layout. In Suitest you store your view elements in the "Element repository" accessible from the black menu bar at the top.
 		 *
-		 * 3. In Suitest the assertion also contains a control directive. That is you can tell Suitest how to proceed based on the result of that assertion. Click on that "continue" at the end of the line below to see all warnings.
+		 * 3. In Suitest the assertion also contains a control directive. That is you can tell Suitest how to proceed based on the result of that assertion.
 		 */
 		await assert.element('Cominandes 2 title focused').matches([
 			PROP.TEXT_COLOR,
@@ -49,7 +49,7 @@ describe('Welcome to Suitest', async() => {
 		await assert.press(VRC.ENTER).interval(1000);
 		await assert.element('Video object').exists().timeout(5000);
 		/**
-		 * This is enough for one test, be sure to check the other test examples in the menu to the left. It is always a good idea to keep your test cases as simple as possible. Ideally any test scenario should not be longer than 30 lines (50 is an extreme case). Another important rule is to have every scenario test a *single* thing.
+		 * This is enough for one test. It is always a good idea to keep your test cases as simple as possible. Ideally any test scenario should not be longer than 30 lines (50 is an extreme case). Another important rule is to have every scenario test a *single* thing.
 		 * If you need to test two different things make two different scenarios.
 		 *
 		 * Generally your test cases should be of the 2 types:
