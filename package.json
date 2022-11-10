@@ -4,7 +4,7 @@
   "description": "Demo set up for Suitest JS API",
   "dependencies": {
     "cross-env": "^7.0.3",
-    "mocha": "^9.1.3",
+    "mocha": "^9.2.2",
     "mocha-junit-reporter": "^2.0.2",
     "mochawesome": "^7.0.1",
     "suitest-js-api": "^3.0.2"
