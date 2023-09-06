@@ -4,10 +4,10 @@
   "description": "Demo set up for Suitest JS API",
   "dependencies": {
     "cross-env": "^7.0.3",
-    "mocha": "^9.1.3",
-    "mocha-junit-reporter": "^2.0.2",
-    "mochawesome": "^7.0.1",
-    "suitest-js-api": "^3.0.2"
+    "mocha": "^10.2.0",
+    "mocha-junit-reporter": "^2.2.0",
+    "mochawesome": "^7.1.3",
+    "suitest-js-api": "^3.10.0"
   },
   "scripts": {
     "start": "suitest run mocha --reporter mocha-junit-reporter --no-timeouts --exit \"./test/dummy.test.js\"",
@@ -18,15 +18,15 @@
     "parallel:logs": "suitest run --config-file=.suitestrc.parallel.json --log-dir=e2e mocha --no-timeouts --exit \"./test/dummy.test.js\"",
     "start:watchMe": "suitest run mocha --reporter mocha-junit-reporter --reporter-options outputs=true --no-timeouts --exit \"./watchMeTests/*.test.js\"",
     "parallel:watchMe": "suitest run --config-file=.suitestrc.parallel.json mocha --no-timeouts --exit \"./watchMeTests/*.test.js\"",
-    "parallel:watchMe:junit": "suitest run --config-file=.suitestrc.parallel.json --log-dir=e2e PROPERTIES=DEVICE_ID:'\"${SUITEST_CHILD_PROCESS%%|*}\"' mocha --reporter mocha-junit-reporter --reporter-options outputs=true,toConsole=true,mochaFile=./reports/junit/'\"${SUITEST_CHILD_PROCESS%%|*}\"'.xml --no-timeouts --exit \"./watchMeTests/*.test.js\"",
-    "parallel:watchMe:junit:win": "suitest run --config-file=.suitestrc.parallel.json --log-dir=e2e cross-env PROPERTIES=DEVICE_ID:\"%SUITEST_CHILD_PROCESS:~0,36%\" mocha --reporter mocha-junit-reporter --reporter-options outputs=true,toConsole=true,mochaFile=\"./reports/junit/%SUITEST_CHILD_PROCESS:~0,36%.xml\" --no-timeouts --exit \"./watchMeTests/*.test.js",
-    "parallel:watchMe:xunit": "suitest run --config-file=.suitestrc.parallel.json --log-dir=e2e mocha --reporter xunit --reporter-options output=./reports/xunit/'\"${SUITEST_CHILD_PROCESS%%|*}\"'.xml,suiteName=DEVICE_ID-'\"${SUITEST_CHILD_PROCESS%%|*}\"' --no-timeouts --exit \"./watchMeTests/*.test.js\"",
-    "parallel:watchMe:xunit:win": "suitest run --config-file=.suitestrc.parallel.json --log-dir=e2e mocha --reporter xunit --reporter-options output=./reports/xunit/%SUITEST_CHILD_PROCESS:~0,36%.xml,suiteName=DEVICE_ID-%SUITEST_CHILD_PROCESS:~0,36% --no-timeouts --exit \"./watchMeTests/*.test.js\"",
+    "parallel:watchMe:junit": "suitest run --config-file=.suitestrc.parallel.json --log-dir=e2e PROPERTIES=DEVICE_ID:'\"$SUITEST_DEVICE_ID\"' mocha --reporter mocha-junit-reporter --reporter-options outputs=true,toConsole=true,mochaFile=./reports/junit/'\"$SUITEST_DEVICE_ID\"'.xml --no-timeouts --exit \"./watchMeTests/*.test.js\"",
+    "parallel:watchMe:junit:win": "suitest run --config-file=.suitestrc.parallel.json --log-dir=e2e cross-env PROPERTIES=DEVICE_ID:\"%SUITEST_DEVICE_ID%\" mocha --reporter mocha-junit-reporter --reporter-options outputs=true,toConsole=true,mochaFile=\"./reports/junit/%SUITEST_DEVICE_ID%.xml\" --no-timeouts --exit \"./watchMeTests/*.test.js",
+    "parallel:watchMe:xunit": "suitest run --config-file=.suitestrc.parallel.json --log-dir=e2e mocha --reporter xunit --reporter-options output=./reports/xunit/'\"$SUITEST_DEVICE_ID\"'.xml,suiteName=DEVICE_ID-'\"$SUITEST_DEVICE_ID\"' --no-timeouts --exit \"./watchMeTests/*.test.js\"",
+    "parallel:watchMe:xunit:win": "suitest run --config-file=.suitestrc.parallel.json --log-dir=e2e mocha --reporter xunit --reporter-options output=./reports/xunit/%SUITEST_DEVICE_ID%.xml,suiteName=DEVICE_ID-%SUITEST_DEVICE_ID% --no-timeouts --exit \"./watchMeTests/*.test.js\"",
     "parallel:watchMe:tap": "suitest run --config-file=.suitestrc.parallel.json --log-dir=e2e mocha --reporter tap  --no-timeouts --exit \"./watchMeTests/*.test.js\"",
-    "parallel:watchMe:mochawesome": "suitest run --config-file=.suitestrc.parallel.json --log-dir=e2e mocha --reporter mochawesome --reporter-options reportTitle=DEVICE_ID-'\"${SUITEST_CHILD_PROCESS%%|*}\"',reportFilename='\"${SUITEST_CHILD_PROCESS%%|*}\"',reportDir='./reports/html',autoOpen=true  --no-timeouts --exit \"./watchMeTests/*.test.js\"",
-    "parallel:watchMe:mochawesome:win": "suitest run --config-file=.suitestrc.parallel.json --log-dir=e2e mocha --reporter mochawesome --reporter-options reportTitle=DEVICE_ID-%SUITEST_CHILD_PROCESS:~0,36%,reportFilename=%SUITEST_CHILD_PROCESS:~0,36%,reportDir=/reports/html,autoOpen=true  --no-timeouts --exit \"./watchMeTests/*.test.js\"",
-    "parallel:slack-reporter": "suitest run --config-file=.suitestrc.parallel.json  mocha --reporter mocha-ci-slack-reporter --reporter-options username=username,url=slack_incoming_webhooks_url,channel=#mocha-reports,testTitle=DEVICE_ID-'\"${SUITEST_CHILD_PROCESS%%|*}\"' --no-timeouts --exit \"./test/dummy.test.js\"",
-    "parallel:slack-reporter:win": "suitest run --config-file=.suitestrc.parallel.json  mocha --reporter mocha-ci-slack-reporter --reporter-options username=username,url=slack_incoming_webhooks_url,channel=#mocha-reports,testTitle=DEVICE_ID-%SUITEST_CHILD_PROCESS:~0,36% --no-timeouts --exit \"./test/dummy.test.js\""
+    "parallel:watchMe:mochawesome": "suitest run --config-file=.suitestrc.parallel.json --log-dir=e2e mocha --reporter mochawesome --reporter-options reportTitle=DEVICE_ID-'\"$SUITEST_DEVICE_ID\"',reportFilename='\"$SUITEST_DEVICE_ID\"',reportDir='./reports/html',autoOpen=true  --no-timeouts --exit \"./watchMeTests/*.test.js\"",
+    "parallel:watchMe:mochawesome:win": "suitest run --config-file=.suitestrc.parallel.json --log-dir=e2e mocha --reporter mochawesome --reporter-options reportTitle=DEVICE_ID-%SUITEST_DEVICE_ID%,reportFilename=%SUITEST_DEVICE_ID%,reportDir=./reports/html,autoOpen=true  --no-timeouts --exit \"./watchMeTests/*.test.js\"",
+    "parallel:slack-reporter": "suitest run --config-file=.suitestrc.parallel.json  mocha --reporter mocha-ci-slack-reporter --reporter-options username=username,url=slack_incoming_webhooks_url,channel=#mocha-reports,testTitle=DEVICE_ID-'\"$SUITEST_DEVICE_ID\"' --no-timeouts --exit \"./test/dummy.test.js\"",
+    "parallel:slack-reporter:win": "suitest run --config-file=.suitestrc.parallel.json  mocha --reporter mocha-ci-slack-reporter --reporter-options username=username,url=slack_incoming_webhooks_url,channel=#mocha-reports,testTitle=DEVICE_ID-%SUITEST_DEVICE_ID% --no-timeouts --exit \"./test/dummy.test.js\""
   },
   "devDependencies": {
     "mocha-ci-slack-reporter": "^1.0.1",
