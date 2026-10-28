@@ -66,6 +66,6 @@ npm i -D mocha-ci-slack-reporter
   * **username** - can be specified any name
   * **channel** - Slack channel where messages will be sends
   * **url** - _Incoming Webhooks_ url from your Slack application (for generating _Incoming Webhooks_ url you can go through **[this guide](https://api.slack.com/messaging/webhooks#getting-started)**). Slack _Incoming Webhooks_ url can be looks like https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX. **Note:** _Incoming Webhooks_ url contains secret about your Slack application - dont use it in public sources
-  * **testTitle** - title for the report message, device id can be putted there by using  SUITEST_CHILD_PROCESS environment variable
+  * **testTitle** - title for the report message, device id can be putted there by using SUITEST_DEVICE_ID environment variable
 
 * Examples scripts: `parallel:slack-reporter`, `parallel:slack-reporter:win`
