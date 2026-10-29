@@ -1,71 +1,196 @@
 # Suitest JavaScript API demo - Mocha integration
 
-This repository holds a minimal set-up, required to launch [Suitest JS API](https://github.com/SuitestAutomation/suitest-js-api) e2e tests with [Mocha test runner](https://github.com/mochajs/mocha).
+This repository contains a minimal setup for running [Suitest JS API](https://github.com/SuitestAutomation/suitest-js-api) end-to-end tests using the [Mocha test runner](https://github.com/mochajs/mocha).
 
-## Demo set up for Suitest JS API with Mocha test runner
+## Setup
 
-Demo set-up is targeting `test/` folder in this repo. Dummy test example would run on any HTML-based app,
-so you can use your own app for testing.
+### 1. Configure Suitest credentials
 
-1. Copy `.suitestrc.dist` file as `.suitestrc` and fill in it's contents 
- with your values according to [documentation](https://suite.st/docs/suitest-api/setup/#environment-setup). .suitestrc.base.json, .suitestrc.json, .suitestrc.parallel.json - are example of defining configuration files for running single or several devices.
-2. In terminal run `yarn` or `npm i`.
-3. Run `yarn start` or `npm run start` for run tests on single device or
- `yarn parallel` or `npm run parallel` for run tests for several devices.
-4. In order to debug your test, run `yarn debug` or `npm run debug` and connect debugger to `localhost:9121`.
- More info on debugging can be found in [our docs](https://suite.st/docs/suitest-api/debugging/).
- 
- ## Example tests
- 
- In `watchMeTests` folder you can find some Suitest tests written for
- WatchMe app (every Suitest account has this app by default). Those tests
- rely on some elements from Suitest "Element repository" and configuration
- where base url set to `https://watchme.suite.st/hbbtv.html` - HbbTv
- configuration in WatchMe app. So make sure you properly adjusted `.suitestrc` file
-and then you can launch them with `npm run start:watchMe` or 
-`npm run parallel:watchMe`.
+Copy `.suitestrc.dist` to `.suitestrc` in the project root and fill in the required values according to the [Suitest environment setup documentation](https://suite.st/docs/suitest-api/setup/#environment-setup).
+
+The `.suitestrc.dist` file contains placeholders for your Suitest credentials, device configuration, and presets. Replace the placeholder values with valid IDs and credentials for your environment.
+
+The repository also includes example configuration files in `config-examples/`. These demonstrate how to define configurations for single-device and parallel execution, including how to share credentials using `extends`.
+
+Keep your local `.suitestrc` file private if it contains credentials or other sensitive values.
+
+### 2. Install dependencies
+
+Install the project dependencies using either npm or Yarn:
+
+```bash
+npm install
+```
+
+Alternatively:
+
+```bash
+yarn
+```
+
+### 3. Run the tests
+
+The default test scripts target the `test/` directory. The included dummy test can run against any HTML-based application, so you can use your own application for testing.
+
+#### Single-device execution
+
+Run the dummy test using the default configuration:
+
+```bash
+npm run start
+```
+
+#### Parallel execution
+
+Run the dummy test using the parallel configuration:
+
+```bash
+npm run parallel
+```
+
+The parallel scripts explicitly load `config-examples/.suitestrc.parallel.json`. This configuration uses `presets` to define the device and application configuration for each test run.
+
+**Important:** Explicit top-level `deviceId` and `appConfigId` values take precedence over presets. When running with presets, make sure these fields are not set in the effective configuration.
+
+### 4. Debugging
+
+To debug a test, run:
+
+```bash
+npm run start:debug
+```
+
+The debugger starts with `--inspect-brk=9121`. Connect your debugger to `localhost:9121`.
+
+For more information, see the [Suitest debugging documentation](https://suite.st/docs/suitest-api/debugging/).
+
+## Configuration files
+
+The `config-examples/` directory contains the following examples:
+
+| File | Purpose |
+| --- | --- |
+| `.suitestrc.base.json` | Shared Suitest credentials (`tokenId` and `tokenPassword`) |
+| `.suitestrc.json` | Example configuration for running tests on a single device |
+| `.suitestrc.parallel.json` | Example configuration for running tests using presets |
+
+The example configurations use `extends` to inherit shared settings from `.suitestrc.base.json`, avoiding duplicated credentials.
+
+The `extends` value is a path to another configuration file, resolved relative to the directory containing the file that declares it. Relative paths can point to files in the same directory or elsewhere in the project.
+
+These files are examples for reference. Adapt them to your environment before running tests.
+
+## Available commands
+
+| Command | Description |
+| --- | --- |
+| `npm run start` | Run the dummy test with the JUnit reporter |
+| `npm run start:logs` | Run the dummy test and save Suitest logs to `e2e/` |
+| `npm run start:debug` | Start the debugger and run the debug test |
+| `npm run start:repl` | Run the REPL test |
+| `npm run parallel` | Run the dummy test using the parallel configuration |
+| `npm run parallel:logs` | Run the dummy test in parallel and save Suitest logs |
+| `npm run start:watchMe` | Run the WatchMe tests with the JUnit reporter |
+| `npm run parallel:watchMe` | Run the WatchMe tests using the parallel configuration |
+| `npm run parallel:watchMe:junit` | Run parallel WatchMe tests and generate separate JUnit XML reports |
+| `npm run parallel:watchMe:junit:win` | Windows variant of the parallel JUnit command |
+| `npm run parallel:watchMe:xunit` | Run parallel WatchMe tests using Mocha's xunit reporter |
+| `npm run parallel:watchMe:xunit:win` | Windows variant of the parallel xunit command |
+| `npm run parallel:watchMe:tap` | Run parallel WatchMe tests using the TAP reporter |
+| `npm run parallel:watchMe:mochawesome` | Run parallel WatchMe tests and generate Mochawesome HTML and JSON reports |
+| `npm run parallel:watchMe:mochawesome:win` | Windows variant of the parallel Mochawesome command |
+| `npm run parallel:slack-reporter` | Run the dummy test using the Slack reporter |
+| `npm run parallel:slack-reporter:win` | Windows variant of the parallel Slack reporter command |
+
+## Example tests
+
+The `watchMeTests/` directory contains Suitest tests for the WatchMe app, which is available by default in every Suitest account.
+
+These tests rely on elements defined in the Suitest Element Repository and on an application configuration whose base URL is set to [https://watchme.suite.st/hbbtv.html](https://watchme.suite.st/hbbtv.html). This corresponds to the HbbTV configuration in the WatchMe app.
+
+Make sure your device, application configuration, credentials, and Element Repository are set up correctly before running these tests.
+
+Run the tests on a single device:
+
+```bash
+npm run start:watchMe
+```
+
+Or run them using the parallel configuration:
+
+```bash
+npm run parallel:watchMe
+```
 
 ## Reporters
 
-There are few examples of how Suitest can be used with different reporters.
+This repository includes examples of different Mocha reporters. The parallel WatchMe scripts demonstrate how to generate reports for individual devices.
 
-### mocha-junit-reporter reporter
+### JUnit reporter (`mocha-junit-reporter`)
 
-Example script: `parallel:watchMe:junit`
+Example scripts:
 
-Also possible to add `[hash]` to file name or path to prevent overriding results.
+- `parallel:watchMe:junit`
+- `parallel:watchMe:junit:win`
 
-Results can be viewed by running `npx xunit-viewer --results=./reports/junit --server`
+These scripts generate JUnit XML reports in `reports/junit/`, using `SUITEST_DEVICE_ID` to distinguish the output files.
 
-### mocha's xunit reporter
+To view the reports, run:
 
-Example script: `parallel:watchMe:xunit`
+```bash
+npx xunit-viewer --results=./reports/junit --server
+```
 
-Directory for reports should exists otherwise it throws error.
+### XUnit reporter
 
-Results can be viewed by running `npx xunit-viewer --results=./reports/xunit --server`
+Example scripts:
 
-### mochawesome reporter
+- `parallel:watchMe:xunit`
+- `parallel:watchMe:xunit:win`
 
-Example script: `parallel:watchMe:mochawesome`
+These scripts generate XML reports in `reports/xunit/`. Make sure the output directory exists before running the tests.
 
-Generates html and json reports.
+To view the reports, run:
 
-### tap reporter
+```bash
+npx xunit-viewer --results=./reports/xunit --server
+```
+
+### Mochawesome reporter
+
+Example scripts:
+
+- `parallel:watchMe:mochawesome`
+- `parallel:watchMe:mochawesome:win`
+
+These scripts generate HTML and JSON reports in `reports/html/`. The report filenames and titles include the device ID.
+
+### TAP reporter
 
 Example script: `parallel:watchMe:tap`
 
-### Slack reporter (mocha-ci-slack-reporter)
+This script runs the WatchMe tests using Mocha's TAP reporter.
 
-* Add Slack reporter to the project:
+### Slack reporter (`mocha-ci-slack-reporter`)
+
+To use the Slack reporter, install it as a development dependency:
+
+```bash
+npm install --save-dev mocha-ci-slack-reporter
 ```
-npm i -D mocha-ci-slack-reporter
-```
 
-* For running mocha with mocha-ci-slack-reporter you need to specify it as an reporter and [required reporter options](https://github.com/hiddentao/mocha-ci-slack-reporter#usage):
-  * **username** - can be specified any name
-  * **channel** - Slack channel where messages will be sends
-  * **url** - _Incoming Webhooks_ url from your Slack application (for generating _Incoming Webhooks_ url you can go through **[this guide](https://api.slack.com/messaging/webhooks#getting-started)**). Slack _Incoming Webhooks_ url can be looks like https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX. **Note:** _Incoming Webhooks_ url contains secret about your Slack application - dont use it in public sources
-  * **testTitle** - title for the report message, device id can be putted there by using SUITEST_DEVICE_ID environment variable
+The reporter requires the following options:
 
-* Examples scripts: `parallel:slack-reporter`, `parallel:slack-reporter:win`
+- `username` — the name displayed as the sender.
+- `channel` — the Slack channel where reports are sent.
+- `url` — the Incoming Webhook URL from your Slack application.
+- `testTitle` — the title of the report message. You can include `SUITEST_DEVICE_ID` to identify the device.
+
+Example scripts:
+
+- `parallel:slack-reporter`
+- `parallel:slack-reporter:win`
+
+See the [mocha-ci-slack-reporter documentation](https://github.com/hiddentao/mocha-ci-slack-reporter#usage) for details on configuring the reporter.
+
+**Security note:** Incoming Webhook URLs contain secrets. Never commit them to the repository or publish them in public sources.
